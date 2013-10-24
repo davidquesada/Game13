@@ -100,6 +100,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		639D7E411818DCA300274997 /* Hackathon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackathon-Prefix.pch"; sourceTree = "<group>"; };
 		AD18583616166D8F00778A3B /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD18583A16166D8F00778A3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD18583C16166D8F00778A3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,7 +108,6 @@
 		AD18584216166D8F00778A3B /* Hackathon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hackathon-Info.plist"; sourceTree = "<group>"; };
 		AD18584416166D8F00778A3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD18584616166D8F00778A3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AD18584816166D8F00778A3B /* Hackathon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackathon-Prefix.pch"; sourceTree = "<group>"; };
 		AD18584916166D8F00778A3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AD18584A16166D8F00778A3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AD18584C16166D8F00778A3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -286,10 +286,10 @@
 				AD18584216166D8F00778A3B /* Hackathon-Info.plist */,
 				AD18584316166D8F00778A3B /* InfoPlist.strings */,
 				AD18584616166D8F00778A3B /* main.m */,
-				AD18584816166D8F00778A3B /* Hackathon-Prefix.pch */,
 				AD18584C16166D8F00778A3B /* Default.png */,
 				AD18584E16166D8F00778A3B /* Default@2x.png */,
 				AD18585016166D8F00778A3B /* Default-568h@2x.png */,
+				639D7E411818DCA300274997 /* Hackathon-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 		AD18582D16166D8E00778A3B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "David Quesada";
 			};
 			buildConfigurationList = AD18583016166D8E00778A3B /* Build configuration list for PBXProject "Hackathon" */;
@@ -565,6 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -604,8 +605,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Hackathon\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -620,8 +622,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Hackathon\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
