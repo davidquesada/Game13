@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="nkW-so-kcb">
-                                <rect key="frame" x="149" y="333" width="22" height="22"/>
+                                <rect key="frame" x="149" y="361" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -71,20 +71,12 @@
                                 <rect key="frame" x="20" y="16" width="280" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <containerView contentMode="scaleToFill" id="0wT-1N-xLM">
-                                <rect key="frame" x="20" y="600" width="280" height="370"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="s45-8f-t5F" kind="embed" id="DOr-iQ-eAh"/>
-                                </connections>
-                            </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dw8-Up-mYp">
-                                <rect key="frame" x="0.0" y="273" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="254" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="je1-xM-0bz"/>
-                                    <barButtonItem title="Start" width="116" id="ryj-Q1-qhf">
+                                    <barButtonItem title="Start (vs Player)" width="180" id="ryj-Q1-qhf">
                                         <color key="tintColor" red="0.14880304038524628" green="0.61310088634490967" blue="0.06436600536108017" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="Yoc-fp-azP" kind="push" id="Yhz-hW-Y63"/>
@@ -104,6 +96,26 @@
                                     <segue destination="Yoc-fp-azP" kind="push" id="GxQ-mf-M6z"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="s15-Kg-Ruh">
+                                <rect key="frame" x="0.0" y="298" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qyZ-Ja-SaF"/>
+                                    <barButtonItem title="Start (vs Computer)" width="180" id="fgW-YN-i05">
+                                        <color key="tintColor" red="0.1488030404" green="0.61310088630000004" blue="0.064366005360000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="v4o-0L-226"/>
+                                </items>
+                                <color key="tintColor" red="0.39243861610000003" green="0.16224938459999999" blue="0.058211812680000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <containerView hidden="YES" contentMode="scaleToFill" id="0wT-1N-xLM">
+                                <rect key="frame" x="20" y="402" width="280" height="370"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="s45-8f-t5F" kind="embed" id="DOr-iQ-eAh"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.22363002217640332" green="0.2939453125" blue="0.14693470333619796" alpha="1" colorSpace="calibratedRGB"/>
                     </view>

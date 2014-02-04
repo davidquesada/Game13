@@ -60,11 +60,17 @@
     logoImageView.layer.shouldRasterize = YES;
     logoImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
+    if (![AppDelegate isIOS7])
     for (UIView *v in self.thistoolbar.subviews.copy)
     {
         if (![[[v class] description] isEqualToString:@"UIToolbarTextButton"])
             [v removeFromSuperview];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,8 +112,16 @@
     rules.layer.borderColor = [UIColor blackColor].CGColor;
     rules.layer.borderWidth = 3.5;
     
+    rules.hidden = NO;
+    
     [UIView animateWithDuration:.3 animations:^{
-        rules.frame = CGRectInset(self.view.bounds, 12, 12);
+        CGRect rect = CGRectInset(self.view.bounds, 12, 12);
+        if ([AppDelegate isIOS7])
+        {
+            rect.size.height -= 20;
+            rect.origin.y += 20;
+        }
+        rules.frame = rect;
 //        rules.frame = CGRectMake(20, 5, 280, 370);
 //        rules.center = self.view.center;
     }];
@@ -115,8 +129,11 @@
 
 -(void)hideRules
 {
+    CGFloat y = self.view.window.frame.size.height; // Wow, much dot syntax!
+    if (![AppDelegate isIOS7])
+        y -= 20;
     [UIView animateWithDuration:.3 animations:^{
-        rules.frame = CGRectMake(20, 460, 280, 370);
+        rules.frame = CGRectMake(20, y, 280, 370);
     }];
 }
 
