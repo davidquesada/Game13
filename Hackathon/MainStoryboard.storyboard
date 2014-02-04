@@ -103,6 +103,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qyZ-Ja-SaF"/>
                                     <barButtonItem title="Start (vs Computer)" width="180" id="fgW-YN-i05">
                                         <color key="tintColor" red="0.1488030404" green="0.61310088630000004" blue="0.064366005360000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="startAgainstComputer:" destination="bvT-4J-Mj4" id="hKq-wJ-nTg"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="v4o-0L-226"/>
                                 </items>

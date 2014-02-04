@@ -89,6 +89,12 @@
     [Game game].startVC = self;
 }
 
+-(IBAction)startAgainstComputer:(id)sender
+{
+    [Game reset];
+    [Game game].startVC = self;
+}
+
 - (IBAction)showRules:(id)sender
 {
     UIToolbar *rulesBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 280, 44)];
@@ -137,7 +143,7 @@
     }];
 }
 
-
+#pragma mark - GameKit stuff.
 
 -(GKSession *)peerPickerController:(GKPeerPickerController *)picker sessionForConnectionType:(GKPeerPickerConnectionType)type
 {
@@ -148,7 +154,6 @@
 
 -(void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)session
 {
-    
     picker.delegate = self;
     [picker dismiss];
 }
@@ -162,7 +167,6 @@
         [Game game].gamekitPeers = peers;
         [Game game].gamekitSession = session;
         [session setDataReceiveHandler:self withContext:nil];
-        
         
         int bid = (int)arc4random()%1000;
         
