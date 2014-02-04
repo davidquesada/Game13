@@ -9,6 +9,7 @@
 #import "StartViewController.h"
 #import "MainViewController.h"
 #import "Game.h"
+#import "AppDelegate.h"
 #import <GameKit/GameKit.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -22,7 +23,6 @@
 
 @implementation StartViewController
 @synthesize startDictionary;
-
 
 -(void)startGameWithDictionary:(NSDictionary *)dict
 {
@@ -41,6 +41,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ([AppDelegate isIOS7])
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     

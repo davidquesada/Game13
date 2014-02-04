@@ -24,25 +24,35 @@
     UIAlertView *loseAlertView;
     
     BOOL _isDoingHint;
+    CGFloat tipsViewCenterY;
 }
 @end
 
 @implementation MainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(CGPoint)tipsPositionRight
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return CGPointMake(160+320, tipsViewCenterY);
+}
+-(CGPoint)tipsPositionActive
+{
+    return CGPointMake(160, tipsViewCenterY);
+}
+-(CGPoint)tipsPositionLeft
+{
+    return CGPointMake(160-320, tipsViewCenterY);
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    tipsView.center = CGPointMake(160+320, 114);
+    // Prevent accidentally swiping back to the main menu.
+    if ([AppDelegate isIOS7])
+        [[self.navigationController interactivePopGestureRecognizer] setEnabled:NO];
+    
+    tipsViewCenterY = tipsView.center.y - 20;
+    tipsView.center = [self tipsPositionRight];
     //tipsView.layer.borderColor = [UIColor blackColor].CGColor;
     //tipsView.layer.borderWidth = 3.5;
     tipsView.layer.cornerRadius = 7;
@@ -694,10 +704,10 @@
         return;
     tipsIsShowing = NO;
     [UIView animateWithDuration:.35 animations:^{
-        tipsView.center = CGPointMake(160-320, 114);
+        tipsView.center = [self tipsPositionLeft];
         tipsView.alpha = 0.0;
     } completion:^(BOOL finished) {
-        tipsView.center = CGPointMake(160+320, 114);
+        tipsView.center = [self tipsPositionRight];
         tipsView.hidden = YES;
     }];
 }
@@ -713,7 +723,7 @@
     tipsIsShowing = YES;
     tipsView.hidden = NO;
     [UIView animateWithDuration:.35 animations:^{
-        tipsView.center = CGPointMake(160, 114);
+        tipsView.center = [self tipsPositionActive];
         tipsView.alpha = 1.0;
     }];
 }
